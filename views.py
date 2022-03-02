@@ -180,7 +180,7 @@ def summary(request, pk):
     if sum== None:
         sum_product_charge = {'charge__sum' : Decimal('0')}
     sum = sum_service_charge.get("service_charge__sum")
-    if sum== None:
+    if sum is None:
         sum_service_charge = {'service_charge__sum' : Decimal('0')}
 
     return render(request, 'crm/summary.html', {'customer': customer,
