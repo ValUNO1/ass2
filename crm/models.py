@@ -17,7 +17,6 @@ class Customer(models.Model):
     def __str__ (self):
         return self.cust_name
 
-
 class Service(models.Model):
     cust_name = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='services')
     service_category = models.CharField(max_length=100)
@@ -36,7 +35,6 @@ class Service(models.Model):
     def __str__(self):
         return str(self.cust_name)
 
-
 class Product(models.Model):
     cust_name = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='products')
     product = models.CharField(max_length=100)
@@ -49,7 +47,5 @@ class Product(models.Model):
         default=timezone.now)
     updated_date = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self):
         return str(self.cust_name)
-
